@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Resume & JD Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="glass-card">
+    <h1>AI Resume & JD Analyzer</h1>
+
+    <form id="uploadForm">
+      <label>Upload Resume:</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.txt" required />
+
+      <label>Select JD Input Mode:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="jdMode" value="upload" checked> Upload</label>
+        <label><input type="radio" name="jdMode" value="paste"> Paste</label>
+      </div>
+
+      <div id="jdUploadSection">
+        <label>Upload JD File:</label>
+        <input type="file" id="jd" name="jd" accept=".pdf,.doc,.docx,.txt" />
+      </div>
+
+      <div id="jdPasteSection" class="hidden">
+        <label>Paste JD Text:</label>
+        <textarea id="jdText" name="jdText" rows="6" placeholder="Paste the job description here..."></textarea>
+      </div>
+
+      <button type="submit">Analyze</button>
+    </form>
+    <div id="results" class="hidden">
+      <p>Total Score: <span id="overallScore"></span></p>
+      <p>Searchability: <span id="searchability"></span></p>
+      <p>Hard Skill Match: <span id="hardSkill"></span></p>
+      <p>Soft Skill Match: <span id="softSkill"></span></p>
+      <ul id="tips"></ul>
+    </div>
+    
+    <div id="loading" class="hidden">Analyzing...</div>
+    
+
+    <div id="progressContainer" class="hidden">
+      <div id="progressBar"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
