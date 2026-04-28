@@ -1,46 +1,101 @@
+# 🚀 AI Resume & Job Description Analyzer
 
-# AI Resume & Job Description Analyzer
+An AI-powered web application that analyzes a candidate’s resume against a given job description and provides structured scoring along with actionable, recruiter-style feedback.
 
-This is an AI-powered web application that analyzes a candidate’s resume against a given job description and provides structured scoring along with actionable feedback. The system is built using FastAPI for the backend and a lightweight HTML, CSS, and JavaScript frontend, with integration of a local LLaMA model via Ollama for intelligent analysis.
+Built using FastAPI for the backend and a lightweight HTML, CSS, and JavaScript frontend, the system integrates a locally hosted LLaMA model via Ollama to deliver intelligent and context-aware analysis.
 
-#TECHNOLOGIES USED
-Python (FastAPI) – backend API development
-HTML, CSS, JavaScript – frontend interface
-LLaMA (via Ollama) – AI-based analysis
-PyMuPDF, python-docx – resume and document parsing
+---
 
-#FEATURES
-Upload resume files (PDF, DOCX, TXT)
-Upload or paste job descriptions
-AI-based evaluation of resume relevance
-Score generation for overall match, searchability, hard skills, and soft skills
-Automated recruiter-style suggestions for improvement
-Simple and user-friendly interface
+## 🛠️ Technologies Used
 
-#PROJECT STRUCTURE
-ai-resume-analyzer/ │
-├── backend/ │
-│   ├── main.py → API entry point
-│   ├── llama_handler.py → Handles AI interaction
-│   ├── utils/ → File parsing logic
-│   ├── prompts/ → AI prompt templates
-│   └── requirements.txt → Dependencies
+* **Python (FastAPI)** – Backend API development
+* **HTML, CSS, JavaScript** – Frontend interface
+* **LLaMA (via Ollama)** – AI-powered analysis
+* **PyMuPDF, python-docx** – Resume and document parsing
+
+---
+
+## ✨ Features
+
+* Upload resume files (PDF, DOCX, TXT)
+* Upload or paste job descriptions
+* AI-based evaluation of resume relevance
+* Score generation:
+
+  * Overall Score
+  * Searchability Score
+  * Hard Skills Match
+  * Soft Skills Match
+* Automated recruiter-style improvement suggestions
+* Simple and user-friendly interface
+
+---
+
+## 📁 Project Structure
+
+```
+ai-resume-analyzer/
 │
-├── frontend/ │
-│   ├── index.html → User interface
-│   ├── script.js → API integration
-│   └── style.css → Styling
+├── backend/
+│   ├── main.py              → API entry point
+│   ├── llama_handler.py     → AI processing logic
+│   ├── utils/               → File parsing utilities
+│   ├── prompts/             → AI prompt templates
+│   └── requirements.txt     → Dependencies
+│
+├── frontend/
+│   ├── index.html           → User interface
+│   ├── script.js            → API integration
+│   └── style.css            → Styling
+```
 
-#SETUP INSTRUCTIONS
-Install Python and required dependencies using requirements.txt
-Install Ollama and run the LLaMA model locally
-Start the backend server using uvicorn
-Open the frontend index.html file in a browser
+---
 
-#HOW TO RUN
-Navigate to the backend folder and start the server
-Ensure the server runs on http://localhost:8000
-Open the frontend and upload resume and job description to analyze
+## ⚙️ Setup Instructions
 
-#LICENSE
-This project is intended for educational and demonstration purposes and can be modified for further enhancements.
+1. Install Python and required dependencies:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Install Ollama and run the LLaMA model:
+
+   ```
+   ollama run llama3
+   ```
+
+3. Start the backend server:
+
+   ```
+   uvicorn main:app --reload
+   ```
+
+4. Open the frontend:
+
+   ```
+   frontend/index.html
+   ```
+
+---
+
+## ▶️ How to Use
+
+* Upload your resume
+* Upload or paste the job description
+* Click **Analyze**
+* View scores and improvement suggestions instantly
+
+---
+
+## 📌 Notes
+
+* Backend runs on: `http://localhost:8000`
+* Requires Ollama to be installed and running locally
+* Designed for demonstration and educational purposes
+
+---
+
+## 📄 License
+
+This project is open for educational use and can be modified for further enhancements.
